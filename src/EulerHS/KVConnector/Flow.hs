@@ -688,7 +688,7 @@ findWithKVConnector dbConf meshCfg whereClause = do --This function fetches all 
               L.logInfoT "findWithKVConnector" ("Returning nothing - Row is deleted already for " <> tableName @(table Identity))
               pure $ (KV, Right Nothing)
             Right (kvLiveRows, _) -> do
-              second (mapRight listToMaybe) <$> findFromDBIfMatchingFails dbConf whereClause kvLiveRows
+              second (mapRight DMaybe.listToMaybe) <$> findFromDBIfMatchingFails dbConf whereClause kvLiveRows
             Left err -> pure $ (KV, Left err)
         else do
           (SQL,) <$> findOneFromDB dbConf whereClause
