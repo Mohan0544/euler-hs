@@ -34,7 +34,8 @@ import           Fmt as X ((+|), (+||), (|+), (||+))
 import           GHC.Base as X (until)
 import           Universum (catchAny)
 import           Universum as X hiding (All, Option, Set, Type, catchAny, head,
-                                 init, last, set, tail, trace)
+                                 init, last, set, tail, trace, readMaybe)
+import           Text.Read as X (readMaybe)
 
 -- Lift for Church encoded Free
 liftFC :: (Functor f, MF.MonadFree f m) => f a -> m a

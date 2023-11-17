@@ -47,6 +47,7 @@ import           System.IO.Unsafe (unsafePerformIO)
 import qualified System.Mem as SYSM (performGC)
 import           EulerHS.HttpAPI
 import           Unsafe.Coerce (unsafeCoerce)
+import qualified Text.Read as Text
 
 -- | FlowRuntime state and options.
 data FlowRuntime = FlowRuntime
@@ -88,7 +89,7 @@ configCacheSize :: Integer
 configCacheSize = 
   let
     mbSize :: Maybe Integer
-    mbSize = readMaybe =<< lookupEnvT "CONFIG_CACHE_SIZE"
+    mbSize = Text.readMaybe =<< lookupEnvT "CONFIG_CACHE_SIZE"
 
   in fromMaybe 4096 mbSize
 
