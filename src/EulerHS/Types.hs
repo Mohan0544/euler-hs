@@ -15,3 +15,4 @@ import           EulerHS.Options as X
 import           EulerHS.SqlDB.MySQL as X
 import           EulerHS.SqlDB.Postgres as X
 import           EulerHS.SqlDB.Types as X hiding (withTransaction)
+import           EulerHS.Core.Types as X
