@@ -1,7 +1,7 @@
 {
   inputs = {
     # Common is used only to get the GHC 8.10 package set.
-    common.url = "github:nammayatri/common";
+    common.url = "github:nammayatri/common/fdb5bdc4ce3c288f1d0248d98053766b2cf4f096";
     nixpkgs.follows = "common/nixpkgs";
     flake-parts.follows = "common/flake-parts";
     haskell-flake.follows = "common/haskell-flake";
