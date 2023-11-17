@@ -36,6 +36,9 @@ import           Universum (catchAny)
 import           Universum as X hiding (All, Option, Set, Type, catchAny, head,
                                  init, last, set, tail, trace, readMaybe)
 import           Text.Read as X (readMaybe)
+import           Data.Maybe as X (fromJust, fromMaybe)
+import           Universum.Unsafe as X (head, init, last, tail, (!!))
+
 
 -- Lift for Church encoded Free
 liftFC :: (Functor f, MF.MonadFree f m) => f a -> m a
